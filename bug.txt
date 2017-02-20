@@ -1,0 +1,21 @@
+溢出
+1. 分析web请求，大量发送请求。
+2. 告警上报
+3. 默认数据库路径)即可直接获得数据库文件
+DOMAIN工具
+默认密码、默认数据库路径
+pyersinia: 一个网络攻击工具- 安全头条
+
+HTTP Flood攻击
+SYN Flood
+注入漏洞、脚本执行漏洞、跨域攻击
+ICMP洪水
+UDP洪水
+分片IP报文攻击
+
+消耗资源方式攻击，登录md5运算
+SQL 注入
+
+http://www.moon-soft.com/download/info/1132.htm
+
+修改数据包？有啥用？
