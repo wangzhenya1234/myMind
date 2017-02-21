@@ -1,0 +1,34 @@
+!SESSION 2017-01-13 13:55:24.608 -----------------------------------------------
+eclipse.buildId=I20100608-0911
+java.version=1.6.0_20
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.jee.product -data C:\MyGitHub\myMind\javaWorkspace -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-01-13 13:55:29.257
+!MESSAGE Both 'com.omondo.uml.core' and 'org.eclipse.uml2.uml' register an extension parser for 'uml'
+
+!ENTRY jp.gr.java_conf.ussiy.app.propedit 1 0 2017-01-13 13:58:10.418
+!MESSAGE properties loading 'CostTest'
+
+!ENTRY org.eclipse.jface 2 0 2017-01-13 14:01:44.872
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-01-13 14:01:44.872
+!MESSAGE A conflict occurred for ALT+CTRL+J:
+Binding(ALT+CTRL+J,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.join.lines,Join Lines,
+		Join lines of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.JoinLinesAction@185f539)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(ALT+CTRL+J,
+	ParameterizedCommand(Command(com.cloudgarden.jigloo.commands.openJiglooPrefs,Open Jigloo Preferences Page,
+		Open Jigloo Preferences Page,
+		Category(com.cloudgarden.jigloo.actions.category,Jigloo,Jigloo Actions,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
