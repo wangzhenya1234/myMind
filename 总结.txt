@@ -10,6 +10,10 @@
 3. S_DEVICETREE_QUERY
 4. D_ENTERPRISE_DEVICE_SAVE
 
+10.45.148.89 808
+
+red-button-122602|neon-lock-122602|lucky-science-122602
+
 *************************************************************************************
 redis
 ´æ´¢·þÎñÆ÷
